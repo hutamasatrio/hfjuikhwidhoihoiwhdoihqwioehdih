@@ -21,7 +21,7 @@ public class CountryService {
      * @return The API interface
      */
     public CountryAPI getAPI() {
-        String BASE_URL = "http://services.groupkt.com/";
+        String BASE_URL = "http://private-0e6b9-gajarwidiatmansyah.apiary-mock.com/";
 
         if (retrofit == null) {
             retrofit = new Retrofit

@@ -1,7 +1,7 @@
 package com.example.jean.retrofitexample.presenter;
 
-import com.example.jean.retrofitexample.model.Country;
-import com.example.jean.retrofitexample.model.Data;
+import com.example.jean.retrofitexample.model.Player;
+import com.example.jean.retrofitexample.model.ResponseApi;
 import com.example.jean.retrofitexample.service.CountryService;
 import com.example.jean.retrofitexample.view.CountryView;
 
@@ -36,25 +36,23 @@ public class CountryPresenter {
         countryService
                 .getAPI()
                 .getResults()
-                .enqueue(new Callback<Data>() {
+                .enqueue(new Callback<ResponseApi>() {
                     @Override
-                    public void onResponse(Call<Data> call, Response<Data> response) {
-                        Data data = response.body();
+                    public void onResponse(Call<ResponseApi> call, Response<ResponseApi> response) {
+                        ResponseApi data = response.body();
 
-                        if (data != null && data.getRestResponse() != null) {
-                            List<Country> result = data.getRestResponse().getResult();
+                        if (data != null && data.getData() != null) {
+                            List<Player> result = data.getData();
                             countryView.countriesReady(result);
                         }
                     }
 
                     @Override
-                    public void onFailure(Call<Data> call, Throwable t) {
-                        try {
-                            throw new InterruptedException("Something went wrong!");
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
+                    public void onFailure(Call<ResponseApi> call, Throwable t) {
+
                     }
+
+
                 });
     }
 }
