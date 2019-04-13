@@ -2,8 +2,8 @@ package com.example.jean.retrofitexample.presenter;
 
 import com.example.jean.retrofitexample.model.Player;
 import com.example.jean.retrofitexample.model.ResponseApi;
-import com.example.jean.retrofitexample.service.CountryService;
-import com.example.jean.retrofitexample.view.CountryView;
+import com.example.jean.retrofitexample.service.PlayerService;
+import com.example.jean.retrofitexample.view.PlayerView;
 
 import java.util.List;
 
@@ -19,16 +19,16 @@ import retrofit2.Response;
  * @date 29/07/16.
  * Jesus loves you.
  */
-public class CountryPresenter {
+public class PlayerPresenter {
 
-    private CountryView countryView;
-    private CountryService countryService;
+    private PlayerView countryView;
+    private PlayerService countryService;
 
-    public CountryPresenter(CountryView view) {
+    public PlayerPresenter(PlayerView view) {
         this.countryView = view;
 
         if (this.countryService == null) {
-            this.countryService = new CountryService();
+            this.countryService = new PlayerService();
         }
     }
 
@@ -55,4 +55,6 @@ public class CountryPresenter {
 
                 });
     }
+
+
 }

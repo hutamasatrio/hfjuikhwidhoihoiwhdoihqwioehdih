@@ -5,12 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.example.jean.retrofitexample.R;
-import com.example.jean.retrofitexample.model.Country;
-import com.example.jean.retrofitexample.presenter.CountryPresenter;
+import com.example.jean.retrofitexample.model.History;
+import com.example.jean.retrofitexample.model.Player;
+import com.example.jean.retrofitexample.presenter.PlayerPresenter;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements CountryView {
+public class MainActivity extends AppCompatActivity implements PlayerView {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,20 +19,27 @@ public class MainActivity extends AppCompatActivity implements CountryView {
         setContentView(R.layout.activity_main);
 
 
-        CountryPresenter countryPresenter = new CountryPresenter(this);
+        PlayerPresenter playerPresenter = new PlayerPresenter(this);
 
         // Maybe it's best to call it on onResume()
-        countryPresenter.getCountries();
+        playerPresenter.getCountries();
+
+
     }
 
     @Override
-    public void countriesReady(List<Country> countries) {
+    public void countriesReady(List<Player> books) {
 
         // See your Logcat :)
-        for (Country country : countries) {
-            Log.i("RETROFIT", country.getName() + "\n"
-                    + " - Alpha2:  " + country.getAlphaCode2() + " \n"
-                    + " - Alpha3: " + country.getAlphaCode3());
+        for (Player book : books) {
+            Log.i("RETROFIT", book.getId() + "\n"
+                    + " - Alpha2:  " + book.getTeam() + " \n"
+                    + " - Alpha3: " + book.getNama());
         }
+    }
+
+    @Override
+    public void historyReady(List<History> books) {
+
     }
 }

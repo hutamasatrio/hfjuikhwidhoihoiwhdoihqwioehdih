@@ -11,10 +11,20 @@ import com.google.gson.annotations.SerializedName;
  */
 public class Data {
 
-    @SerializedName("RestResponse")
-    private RestResponse restResponse;
+    @SerializedName("ResponseApi")
+    private ResponseApi responseApi;
 
-    public RestResponse getRestResponse() {
-        return restResponse;
+    public ResponseApi getResponseApi() {
+        return responseApi;
     }
+
+
+
+    @SerializedName("ResponseApi2")
+    private  ResponseApi2 responseApi2;
+
+    public ResponseApi2 getResponseApi2(){
+        return responseApi2;
+    }
+
 }

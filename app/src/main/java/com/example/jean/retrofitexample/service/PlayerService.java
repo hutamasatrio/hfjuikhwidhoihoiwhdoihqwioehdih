@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * @date 29/07/16.
  * Jesus loves you.
  */
-public class CountryService {
+public class PlayerService {
     private Retrofit retrofit = null;
 
 
@@ -20,8 +20,8 @@ public class CountryService {
      *
      * @return The API interface
      */
-    public CountryAPI getAPI() {
-        String BASE_URL = "http://private-0e6b9-gajarwidiatmansyah.apiary-mock.com/";
+    public PlayerAPI getAPI() {
+        String BASE_URL = "https://private-0e6b9-ganjarwidiatmansyah.apiary-mock.com/";
 
         if (retrofit == null) {
             retrofit = new Retrofit
@@ -31,6 +31,7 @@ public class CountryService {
                     .build();
         }
 
-        return retrofit.create(CountryAPI.class);
+        return retrofit.create(PlayerAPI.class);
     }
+
 }
