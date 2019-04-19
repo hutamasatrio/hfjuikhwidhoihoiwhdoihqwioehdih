@@ -16,4 +16,13 @@
         app:layout_constraintRight_toRightOf="@+id/activity_main"
         app:layout_constraintTop_toTopOf="@+id/activity_main" />
 
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="6dp"
+        android:id="@+id/rv_player"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+    </android.support.v7.widget.RecyclerView>
+
 </android.support.constraint.ConstraintLayout>

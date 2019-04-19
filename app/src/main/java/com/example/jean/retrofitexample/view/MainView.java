@@ -12,7 +12,7 @@ import java.util.List;
  * @date 09/03/18.
  * Jesus loves you.
  */
-public interface PlayerView {
+public interface MainView {
 
     void countriesReady(List<Player> books);
     void historyReady(List<History> books);

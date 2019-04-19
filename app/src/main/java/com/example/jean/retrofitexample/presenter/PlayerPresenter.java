@@ -2,8 +2,8 @@ package com.example.jean.retrofitexample.presenter;
 
 import com.example.jean.retrofitexample.model.Player;
 import com.example.jean.retrofitexample.model.ResponseApi;
-import com.example.jean.retrofitexample.service.PlayerService;
-import com.example.jean.retrofitexample.view.PlayerView;
+import com.example.jean.retrofitexample.service.MainService;
+import com.example.jean.retrofitexample.view.MainView;
 
 import java.util.List;
 
@@ -21,18 +21,18 @@ import retrofit2.Response;
  */
 public class PlayerPresenter {
 
-    private PlayerView countryView;
-    private PlayerService countryService;
+    private MainView countryView;
+    private MainService countryService;
 
-    public PlayerPresenter(PlayerView view) {
+    public PlayerPresenter(MainView view) {
         this.countryView = view;
 
         if (this.countryService == null) {
-            this.countryService = new PlayerService();
+            this.countryService = new MainService();
         }
     }
 
-    public void getCountries() {
+    public void getData() {
         countryService
                 .getAPI()
                 .getResults()
